@@ -1,5 +1,9 @@
 ## Rollup 入坑指南
 
+by @cheap-pets/scrollbar-ww , oct 2018
+
+
+
 ### 1. 前言
 
 足够幸运的话，你们也许正好需要做这些事情：
@@ -439,7 +443,7 @@ export default {
 
 ``` json
 {
-    targets: [ '路径1', '路径2', ... ]
+    "targets": [ "路径1", "路径2" ]
 }
 ```
 
@@ -457,7 +461,7 @@ export default {
 
 ``` json
 {
-  '源文件夹或文件路径': '目标文件夹或文件路径'，
+  "源文件夹或文件路径": "目标文件夹或文件路径"，
   ...
 }
 ```
@@ -470,9 +474,9 @@ export default {
 
 参数示例：
 
-```
+``` json
 {
-    css: true // true 表示将内置的 style 转换并嵌入 js 中，false 则输出给其他样式处理插件
+    "css": true // true 表示将内置的 style 转换并嵌入 js 中，false 则输出给其他样式处理插件
 }
 ```
 
@@ -623,10 +627,10 @@ export default {
 
 ``` json
 {
-  module: true,
-  jsnext: true,
-  main: true,
-  browser: true
+  "module": true,
+  "jsnext": true,
+  "main": true,
+  "browser": true
 }
 ```
 
@@ -659,14 +663,14 @@ package.json 中，可以指定不同的 js 文件分别作为包依赖入口，
 
 参数示例：
 
-``` json
-{
-  exclude: [/\/core-js\//],  // 不转换 polyfill 注入的代码，避免产生循环依赖警告
-  runtimeHelpers: true, // 如果要使用 transform-runtime 就设置为 true
-  externalHelpers: false,
-  sourceMap: true,
-  extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue'] // 所需转换的文件后缀
-}
+``` js
+babel({
+  'exclude': [/\/core-js\//],  // 不转换 polyfill 注入的代码，避免产生循环依赖警告
+  'runtimeHelpers': true, // 如果要使用 transform-runtime 就设置为 true
+  'externalHelpers': false,
+  'sourceMap': true,
+  'extensions': ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue'] // 所需转换的文件后缀
+})
 ```
 
 `externalHelpers` 这个参数说明一下：
@@ -729,10 +733,10 @@ const uglify = require('rollup-plugin-uglify').uglify
 
 ``` json
 {  
-  template: 'src/index.html', // html 模板文件路径
-  target: '../index.html', // 目标文件路径，相对于 output.file 的路径
-  hash: true, // 是否在 output.file 文件名中加入 hash 片段，避免浏览器缓存
-  replaceToMinScripts: true // 是否自动将 <script> 标签中引用的 .js 文件替换成 .min.js 文件
+  "template": "src/index.html", // html 模板文件路径
+  "target": "../index.html", // 目标文件路径，相对于 output.file 的路径
+  "hash": true, // 是否在 output.file 文件名中加入 hash 片段，避免浏览器缓存
+  "replaceToMinScripts": true // 是否自动将 <script> 标签中引用的 .js 文件替换成 .min.js 文件
 }
 ```
 
@@ -821,7 +825,7 @@ export default (options = {}) => {
 
 其中，options 参数，是运行时指定给插件的参数。如我们之前贴过的 html 插件的参数：
 
-``` json
+``` js
 html({
   template: 'src/index.html',
   target: '../index.html',
