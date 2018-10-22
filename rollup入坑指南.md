@@ -1,6 +1,6 @@
 ## Rollup 入坑指南
 
-by @cheap-pets/scrollbar-ww , oct 2018
+by scrollbar-ww@cheap-pets, oct 2018
 
 
 
@@ -616,6 +616,8 @@ export default {
   ]
 }
 ```
+
+postcss 处理样式代码时，会将所有的样式解析成结构化数据缓存起来，所以每个目标输出不可共用一个插件实例，否则后边打包的目标样式中会包含前序目标中的样式代码。
 
 
 
