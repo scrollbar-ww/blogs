@@ -1006,7 +1006,7 @@ env 包含三个常用的配置参数：
 
 minify preset 也是整合了很多个针对代码不同特性进行压缩的插件，其配置参数，主要是指定各种特性是否进行压缩。
 
-我们通常只设置 `builtIns: false`，这也算 minify 目前的坑之一，不设置这个参数很多情况下容易报错。
+我们通常只设置 `builtIns: false`，这也算 minify 目前的坑之一，不设置这个参数很多情况下容易报错（Couldn't find intersection ）。
 
 
 
