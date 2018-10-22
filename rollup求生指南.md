@@ -1,4 +1,4 @@
-## Rollup 入坑指南
+## Rollup 求生指南
 
 by scrollbar-ww@cheap-pets, oct 2018
 
